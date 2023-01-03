@@ -53,6 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
@@ -63,6 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
@@ -88,6 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackgroundImage = global::Investing_Alarm.Properties.Resources.BG;
             this.ClientSize = new System.Drawing.Size(306, 103);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.label2);

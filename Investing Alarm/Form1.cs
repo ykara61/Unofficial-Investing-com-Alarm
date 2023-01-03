@@ -165,13 +165,9 @@ namespace Investing_Alarm
                 {
                     ur = new Uri(instruments.Where(x=> x.Name == currencyComboBox.Text).LastOrDefault().LinkString);
                 }
-                else if (linkTxt.Text.Length > 3)
+                else
                 {
-                    ur = new Uri(linkTxt.Text);
-                }
-                else if (linkTxt.Text.Length < 3)
-                {
-                    MessageBox.Show("Please Type a Valid Investing URL or Select from List");
+                    MessageBox.Show("Please select an instrument from the list. If the desired instrument is not available, it can be added using the 'Add' button.");
                     state = State.Idle;
                     return;
                 }
