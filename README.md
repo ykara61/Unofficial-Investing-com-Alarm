@@ -12,6 +12,7 @@ At this point in time, The .NET Core are widely adoped by a large community of e
 
 # 3. Investing.com Website Currency Alarm (Unofficial)
 
+It is typically not permitted to send web requests to retrieve the HTML of a website due to the presence of **CloudFlare**. When attempting to access **investing.com**, **CloudFlare** may verify that a valid web browser is being used. To address this issue, the implementation of the **WebView2** Nuget package has been utilized as a solution.
 
 ## 3a. Development Environment
 - Windows 10
@@ -21,6 +22,7 @@ At this point in time, The .NET Core are widely adoped by a large community of e
 - .NET Runtime [(.NET 6)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 - Windows OS
 - Suitable **investing.com** website link
+- **WebView2** package
 
 ## First Run
 
