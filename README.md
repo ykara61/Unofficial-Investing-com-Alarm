@@ -39,12 +39,10 @@ The application allows you to select an instrument from a drop-down menu (also k
     <img src="/Images/RunningForm.png" alt>
 </p>
 
-- **Get available PIDs** - It scans vehicle OBDII port and gives you all available PID values names(*such as MonitorStatus,FreezeDTC, CalcEngineLoad, EngineCoolantTemp, EngineRPM, VehicleSpeed, IntakeAirTemperature etc.*) that is active in the vehicle CAN-BUS. You can also see all OBDII PID values in [this wikipedia page](https://en.wikipedia.org/wiki/OBD-II_PIDs). All known PID values stored in "Resources" folder as json file in the solution.
-- **Get Current Vehicle Data** - This option writes some significant real time vehicle data that contains *Engine rpm, Vehicle Speed* and *Fuel level*. These values will be printed until user terminates the console application.
-- **Free Mode (Pre-Configured)** -  This option gives to availability to send any data you want to send to the Elm 327. All possible commands that is available in the web [Link](https://www.sparkfun.com/datasheets/Widgets/ELM327_AT_Commands.pdf)
+- As demonstrated below, the application is designed to retrieve real-time data from a specified investment website link at regular intervals in order to provide the most up-to-date information for analysis and decision-making purposes.
 
 <p>
-    <img src="/Images/ELM327_ALL_MODES.png" alt>
+    <img src="/Images/RealTimeDemostrate.png" alt>
     <em>Options Screenshots</em>
 </p>
 
