@@ -48,7 +48,6 @@ The application allows you to select an instrument from a drop-down menu (also k
     <img src="/Images/RealTimeDemostrate.png" width="65%" height="65%">
 </p>
 
-The complete .NET project source for the publisher is available under the Dotnetcoresamples folder in this repository.
+The complete .NET project source for the publisher is available in this repository.
 
-Run the application using 'dotnet run' and you should see messages consumed by the dotnetcore
 
