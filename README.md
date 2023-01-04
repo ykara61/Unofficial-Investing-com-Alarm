@@ -45,13 +45,10 @@ The application allows you to select an instrument from a drop-down menu (also k
     <img src="/Images/RealTimeDemostrate.png" width="65%" height="65%">
 </p>
 
-- It is possible to minimize the application by clicking the "Minimum" button after starting the alarm, as demonstrated below. Once this action is taken, the application will be placed in the toolbox and will continue to function in the background.
+- It is possible to minimize the application by clicking the "Minimize" button after starting the alarm, as demonstrated below. Once this action is taken, the application will be placed in the toolbox and will continue to function in the background.
 
 <p>
-    <img src="/Images/MinimizeTheForm.png" alt>
-</p>
-<p>
-    <img src="/Images/toolBoxRedBox.jpg" alt>
+    <img src="/Images/toolBoxRedBox.jpg" width="50%" height="50%">
 </p>
 
 The complete .NET project source for the publisher is available in this repository.
