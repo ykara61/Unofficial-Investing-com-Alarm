@@ -6,7 +6,7 @@ The aim of this repository is to retrieve real-time currency values from the **I
     <img src="/Images/BothWindow.png" alt>
 </p>
 
-# 2. Why .NET/.NET Core for OBDII Interface
+# 2. Why .NET/.NET Core for this Unofficial investing alarm
 
 At this point in time, The .NET Core are widely adoped by a large community of enterprise developers. It paves way for use programming language like C# for making currency value alarm application. The enterprise developers can integrate this functionality into Console Application, Windows Application and Xamarin mobile applications etc.
 
@@ -39,14 +39,15 @@ The application allows you to select an instrument from a drop-down menu (also k
     <img src="/Images/RunningForm.png" alt>
 </p>
 
+
+
+
 - As demonstrated below, the application is designed to retrieve real-time data from a specified investment website link at regular intervals in order to provide the most up-to-date information for analysis and decision-making purposes.
 
 <p>
-    <img src="/Images/RealTimeDemostrate.png" alt>
-    <em>Options Screenshots</em>
+    <img src="/Images/RealTimeDemostrate.png" width="65%" height="65%">
 </p>
 
-The complete .NET project source for the publisher is available under the Dotnetcoresamples folder in this repository.
+The complete .NET project source for the publisher is available in this repository.
 
-Run the application using 'dotnet run' and you should see messages consumed by the dotnetcore
 
