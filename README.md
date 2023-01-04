@@ -8,9 +8,9 @@ The aim of this repository is to retrieve real-time currency values from the **I
 
 # 2. Why .NET/.NET Core for OBDII Interface
 
-At this point in time, The .NET Core are widely adoped by a large community of enterprise developers. It paves way for use programming language like C# for communicating with vehicle OBDII port. The enterprise developers can integrate this functionality into Console Application, Windows Application and Xamarin mobile applications etc.
+At this point in time, The .NET Core are widely adoped by a large community of enterprise developers. It paves way for use programming language like C# for making currency value alarm application. The enterprise developers can integrate this functionality into Console Application, Windows Application and Xamarin mobile applications etc.
 
-# 3. .NET ELM327 WIFI OBDII TOOL
+# 3. Investing.com Website Currency Alarm (Unofficial)
 
 
 ## 3a. Development Environment
@@ -19,13 +19,12 @@ At this point in time, The .NET Core are widely adoped by a large community of e
 
 ## 3b. Runtime Requirements
 - .NET Runtime [(.NET 6)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-- Linux, Windows or MacOs Operational System
-- ELM 327 WiFi OBDII Tool [(Amazon Link)](https://www.amazon.com/Interface-Scanner-Diagnostic-Original-Support/dp/B07L4926C1/ref=sr_1_1?crid=370UVA85IY1AF&keywords=elm+327+wifi&qid=1671276353&sprefix=elm+327+wif%2Caps%2C189&sr=8-1)
-- Suitable OBDII Interface
+- Windows OS
+- Suitable **investing.com** website link
 
-## Application Setup
+## First Run
 
-Application setup is quite simple. You need to connect WiFi AP that is automatically created by ELM 327 device. You can ping to ELM 327 tool's IP (usually 192.168.0.10) for checking the connection after you connected to device. 
+Using the application is straightforward. On the first run, the combo box will be empty, meaning there are no linked instruments (currencies). To add the first instrument, click the "Add" button. A new form will appear where you can add a new instrument by entering a title and link.
 
 <p>
     <img src="/Images/ELM327_NET6_SETUP.png" alt>
