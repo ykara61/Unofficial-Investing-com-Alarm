@@ -39,13 +39,19 @@ The application allows you to select an instrument from a drop-down menu (also k
     <img src="/Images/RunningForm.png" alt>
 </p>
 
-
-
-
 - As demonstrated below, the application is designed to retrieve real-time data from a specified investment website link at regular intervals in order to provide the most up-to-date information for analysis and decision-making purposes.
 
 <p>
     <img src="/Images/RealTimeDemostrate.png" width="65%" height="65%">
+</p>
+
+- It is possible to minimize the application by clicking the "Minimum" button after starting the alarm, as demonstrated below. Once this action is taken, the application will be placed in the toolbox and will continue to function in the background.
+
+<p>
+    <img src="/Images/MinimizeTheForm.png" alt>
+</p>
+<p>
+    <img src="/Images/toolBoxRedBox.jpg" alt>
 </p>
 
 The complete .NET project source for the publisher is available in this repository.
