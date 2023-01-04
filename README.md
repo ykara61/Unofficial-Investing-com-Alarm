@@ -3,7 +3,7 @@
 The aim of this repository is to retrieve real-time currency values from the **Investing.com** website and create an application that generates alerts based on this data.
 
 <p>
-    <img src="/Images/ELM327_NET6_BASE.png" alt>
+    <img src="/Images/BothWindow.png" alt>
 </p>
 
 # 2. Why .NET/.NET Core for OBDII Interface
