@@ -33,8 +33,7 @@ At this point in time, The .NET Core are widely adoped by a large community of e
 
 ## Running The APP
 
-When connection between pc and ELM327 has been succeed. You can run the executable file in debug directory. There are several start option in the application.
-These options are:
+The application allows you to select an instrument from a drop-down menu (also known as a combo box) that you have previously added. You also have the option to specify a range for the selected instrument by defining a minimum and/or maximum limit. The minimum limit can be entered in the text box located in the bottom left corner, while the maximum limit can be entered in the text box located in the bottom right corner. If the selected instrument exceeds the defined limits, the application will provide an audible warning.
 
 <p>
     <img src="/Images/RunningForm.png" alt>
