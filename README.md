@@ -24,11 +24,10 @@ At this point in time, The .NET Core are widely adoped by a large community of e
 
 ## First Run
 
-Using the application is straightforward. On the first run, the combo box will be empty, meaning there are no linked instruments (currencies). To add the first instrument, click the "Add" button. A new form will appear where you can add a new instrument by entering a title and link.
+* Using the application is straightforward. On the first run, the combo box will be empty, meaning there are no linked instruments (currencies). To add the first instrument, click the "Add" button. A new form will appear where you can add a new instrument by entering a title and link.
 
 <p>
-    <img src="/Images/ELM327_NET6_SETUP.png" alt>
-    <em>Application Setup Diagram</em>
+    <img src="/Images/FirstRunAddNew.png" alt>
 </p>
 
 
