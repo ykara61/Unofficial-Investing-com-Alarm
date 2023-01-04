@@ -1,4 +1,5 @@
-﻿using Investing_Alarm.Items;
+﻿using Investing_Alarm.Helpers;
+using Investing_Alarm.Items;
 using System.Globalization;
 using System.Media;
 using System.Reflection;
@@ -12,12 +13,12 @@ namespace Investing_Alarm
         private int i = 0;
         private float maxTarget;
         private float minTarget;
-
         private static string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\BrokerAlert";
         private static string pathTxt = path + "\\keyValue.txt";
         private Uri ur;
         delegate void SetTextCallback(string text);
         private List<Instrument> instruments;
+        private WebPageParser wpp;
 
         private enum State
         {
@@ -32,6 +33,8 @@ namespace Investing_Alarm
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
             CultureInfo ci = CultureInfo.InstalledUICulture;
             InitializeComponent();
+
+            wpp = new WebPageParser();
 
             this.notifyIcon1.DoubleClick += NotifyIcon1_DoubleClick;
 
@@ -70,17 +73,15 @@ namespace Investing_Alarm
                 try
                 {
                     var targetElement = await webView21.ExecuteScriptAsync("document.getElementById('__next').outerHTML");
-                    float value = currenyValueParser(targetElement);
-                    float changeInValue = GetChangeInValue(targetElement);
-                    var title = currenyTitleParser(targetElement);
-                    Console.WriteLine(currenyTitleParser(targetElement));
+                    wpp.ParseAllHtml(targetElement);
+                    Console.WriteLine(wpp.currenyTitleParser(targetElement));
                     try
                     {
-                        if (((value >= maxTarget)) && (maxTarget > 0))
+                        if (((wpp.value >= maxTarget)) && (maxTarget > 0))
                         {
                             PlaySound();
                         }
-                        else if ((minTarget >= value) && (minTarget > 0))
+                        else if ((minTarget >= wpp.value) && (minTarget > 0))
                         {
                             PlaySound();
                         }
@@ -90,7 +91,7 @@ namespace Investing_Alarm
                         Console.WriteLine(en.Message);
                     }
 
-                    if (changeInValue < 0)
+                    if (wpp.changeInInstrument < 0)
                     {
                         currencyValueTxt.BackColor = Color.LightPink;
                     }
@@ -98,8 +99,8 @@ namespace Investing_Alarm
                     {
                         currencyValueTxt.BackColor = Color.LightGreen;
                     }
-                    CurrencyTitle.Text = title;
-                    currencyValueTxt.Text = value.ToString("N");
+                    CurrencyTitle.Text = wpp.title;
+                    currencyValueTxt.Text = wpp.value.ToString("N");
                     lastUpdateTimeTxt.Text = DateTime.Now.ToString("hh:mm:ss");
                 }
                 catch (Exception hata)
@@ -107,32 +108,6 @@ namespace Investing_Alarm
                     Console.WriteLine(hata);
                 }
             }
-        }
-
-        private float GetChangeInValue(string html)
-        {
-            var output = html.Replace(@"\u003C", "<");
-            var tokens = output.Split(new[] { "instrument-price-change" }, StringSplitOptions.None)[1].Split('\u003C')[0].ToString();
-            var value = tokens.Split('>')[1];
-            float.TryParse(value, out float _value);
-            return _value;
-        }
-
-        private float currenyValueParser(string html)
-        {
-            var output = html.Replace(@"\u003C", "<");
-            var tokens = output.Split(new[] { "instrument-price-last" }, StringSplitOptions.None)[1].Split('\u003C')[0].ToString();
-            var value = tokens.Split('>')[1];
-            float.TryParse(value, out float _value);
-            return _value;
-        }
-
-        private string currenyTitleParser(string html)
-        {
-            var output = html.Replace(@"\u003C", "<");
-            var tokens = output.Split(new[] { "inv-link bold datatable_cell--name" }, StringSplitOptions.None)[1].Split('\u003C')[0].ToString();
-            var value = tokens.Split('>')[1];
-            return value;
         }
 
 
@@ -175,8 +150,6 @@ namespace Investing_Alarm
                 state = State.Started;
                 ((Button)sender).Text = "Stop";
                 currencyValueTxt.BackColor = Color.LightYellow;
-                //groupBox2.Enabled = false;
-                //groupBox1.Enabled = false;
 
                 if ((maxValueTxt.Text.Length < 1) && (minValueTxt.Text.Length < 1))
                 {
@@ -274,14 +247,5 @@ namespace Investing_Alarm
             newInstrumentForm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RefreshInstrumentList();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
