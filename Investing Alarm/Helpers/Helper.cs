@@ -1,5 +1,6 @@
 ﻿using Investing_Alarm.Items;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,7 +47,7 @@ namespace Investing_Alarm.Helpers
             try
             {
                 var jsonString = ReadSavedInstruments();
-                var items =  JsonConvert.DeserializeObject<List<Instrument>>(jsonString);
+                var items = JsonConvert.DeserializeObject<List<Instrument>>(jsonString);
 
                 items.Add(item);
                 var newJson = JsonConvert.SerializeObject(items);
@@ -61,7 +62,7 @@ namespace Investing_Alarm.Helpers
         }
 
 
-        public static List<Instrument> GetInstruments() 
+        public static List<Instrument> GetInstruments()
         {
             try
             {
@@ -71,7 +72,8 @@ namespace Investing_Alarm.Helpers
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-                return null;
+                Console.WriteLine(e.Message);
+                return new List<Instrument>();
             }
         }
 
@@ -81,12 +83,21 @@ namespace Investing_Alarm.Helpers
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string folderName = Application.ProductName;
             string path = System.IO.Path.Combine(appDataPath, folderName);
+            
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                var filePath_ = path + "/SavedInstruments.json";
+                var val = JsonConvert.SerializeObject(new List<Instrument>());
+                System.IO.File.WriteAllText(filePath_,val );
+            }
+
             string filePath = path + "/SavedInstruments.json";
             string json = System.IO.File.ReadAllText(filePath);
             return json;
         }
 
-        public static void WriteIntoResource(string filename,string value)
+        public static void WriteIntoResource(string filename, string value)
         {
             // Determine path
             var assembly = Assembly.GetExecutingAssembly();
