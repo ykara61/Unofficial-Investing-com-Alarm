@@ -28,14 +28,15 @@ It is typically not permitted to send web requests to retrieve the HTML of a web
 
 **Note: Your investing.com link page should be in english due to localization problems.(Some regions uses **,** instead of **.** in numeric system)** 
 
-**Example ;** **Instrument's Label :** "BTC-USD" and **Instrument's Investing Link :** "https://www.investing.com/crypto/bitcoin/btc-usd" .
-
 * Using the application is straightforward. On the first run, the combo box will be empty, meaning there are no linked instruments (currencies). To add the first instrument, click the "Add" button. A new form will appear where you can add a new instrument by entering a title and link.
 
 <p>
     <img src="/Images/FirstRunAddNew.png" alt>
 </p>
 
+**Example** 
+- **Instrument's Label :** "BTC-USD" 
+- **Instrument's Investing Link :** "https://www.investing.com/crypto/bitcoin/btc-usd" .
 
 ## Running The APP
 
